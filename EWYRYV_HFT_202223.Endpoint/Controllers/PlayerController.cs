@@ -52,9 +52,9 @@ namespace EWYRYV_HFT_202223.Endpoint.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            var actorToDelete = this.logic.Read(id);
+            var playerToDelete = this.logic.Read(id);
             this.logic.Delete(id);
-            this.hub.Clients.All.SendAsync("PlayerDeleted", actorToDelete);
+            this.hub.Clients.All.SendAsync("PlayerDeleted", playerToDelete);
         }
     }
 }
