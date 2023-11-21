@@ -1,3 +1,4 @@
+using EWYRYV_HFT_202223.Endpoint.Services;
 using EWYRYV_HFT_202223.Logic;
 using EWYRYV_HFT_202223.Models;
 using EWYRYV_HFT_202223.Repository;
@@ -40,6 +41,8 @@ namespace EWYRYV_HFT_202223.Endpoint
             services.AddTransient<ITeamLogic, TeamLogic>();
             services.AddTransient<IPlayerLogic, PlayerLogic>();
 
+            services.AddSignalR();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -74,6 +77,7 @@ namespace EWYRYV_HFT_202223.Endpoint
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/Hub");
             });
         }
     }

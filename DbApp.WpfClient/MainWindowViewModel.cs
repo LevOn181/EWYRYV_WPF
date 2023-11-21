@@ -54,7 +54,7 @@ namespace DbApp.WpfClient
             
             if (!IsInDesingMode)
             {
-                Players = new RestCollection<Player>("http://localhost:15885/", "player");
+                Players = new RestCollection<Player>("http://localhost:15885/", "player", "hub");
                 CreatePlayerCommand = new RelayCommand(() =>
                 {
                     Players.Add(new Player()
