@@ -17,7 +17,7 @@ namespace EWYRYV_HFT_202223.Endpoint.Controllers
         ITeamLogic logic;
         IHubContext<SignalRHub> hub;
 
-        public TeamController(ITeamLogic logic)
+        public TeamController(ITeamLogic logic, IHubContext<SignalRHub> hub)
         {
             this.hub = hub;
             this.logic = logic;

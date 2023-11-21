@@ -17,7 +17,7 @@ namespace EWYRYV_HFT_202223.Endpoint.Controllers
         IManagerLogic logic;
         IHubContext<SignalRHub> hub;
 
-        public ManagerController(IManagerLogic logic)
+        public ManagerController(IManagerLogic logic, IHubContext<SignalRHub> hub)
         {
             this.hub = hub;
             this.logic = logic;
@@ -52,9 +52,9 @@ namespace EWYRYV_HFT_202223.Endpoint.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            var ManagerToDelete = this.logic.Read(id);
+            var managerToDelete = this.logic.Read(id);
             this.logic.Delete(id);
-            this.hub.Clients.All.SendAsync("ManagerDeleted", ManagerToDelete);
+            this.hub.Clients.All.SendAsync("ManagerDeleted", managerToDelete);
         }
     }
 }

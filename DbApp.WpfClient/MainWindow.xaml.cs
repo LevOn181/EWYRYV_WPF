@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DbApp.WpfClient.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,24 @@ namespace DbApp.WpfClient
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void bt_managerWindow_Click(object sender, RoutedEventArgs e)
+        {
+            ManagerWindow managerWindow = new ManagerWindow();
+            managerWindow.Show();
+        }
+
+        private void bt_teamWindow_Click(object sender, RoutedEventArgs e)
+        {
+            TeamWindowWindow teamWindow = new TeamWindowWindow();
+            teamWindow.Show();
+        }
+
+        private void bt_playerWindow_Click(object sender, RoutedEventArgs e)
+        {
+            var playerWindow = new PlayerWindow();
+            playerWindow.Show();
         }
     }
 }
