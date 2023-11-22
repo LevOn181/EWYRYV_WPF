@@ -18,17 +18,28 @@
         <ListBox ItemsSource="{Binding Players}" SelectedItem="{Binding SelectedPlayer}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Label Content="{Binding Name}"/>
+                    <Border BorderBrush="Lavender" BorderThickness="2" Width="365">
+                        <StackPanel>
+                            <Label Content="{Binding Name}"/>
+                        </StackPanel>
+                    </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <StackPanel Grid.Column="1">
-            <Label Content="Name" Background="Lavender" Padding="10" />
-            <TextBox Text="{Binding SelectedPlayer.Name}" Padding="10" Margin="0,0,0,30"/>
-
-            <Button Content="Create Player" Command="{Binding CreatePlayerCommand}" Margin="10" Padding="10" />
-            <Button Content="Update Player" Command="{Binding UpdatePlayerCommand}" Margin="10" Padding="10" />
-            <Button Content="Delete Player" Command="{Binding DeletePlayerCommand}" Margin="10" Padding="10" />
+            <Label Content="Name" Background="Lavender" Padding="5" />
+            <TextBox Text="{Binding SelectedPlayer.Name}" Padding="5"/>
+            <Label Content="Birth date" Background="Lavender" Padding="5" />
+            <TextBox Text="{Binding SelectedPlayer.BirthDate}" Padding="5" />
+            <Label Content="Kit number" Background="Lavender" Padding="5" />
+            <TextBox Text="{Binding SelectedPlayer.KitNumber}" Padding="5" />
+            <Label Content="Team ID" Background="Lavender" Padding="5" />
+            <TextBox Text="{Binding SelectedPlayer.TeamId}" Padding="5" />
+            <Label Content="Value" Background="Lavender" Padding="5" />
+            <TextBox Text="{Binding SelectedPlayer.Value}" Padding="5" />
+            <Button Content="Create Player" Command="{Binding CreatePlayerCommand}" Margin="5" Padding="8" />
+            <Button Content="Update Player" Command="{Binding UpdatePlayerCommand}" Margin="5" Padding="8" />
+            <Button Content="Delete Player" Command="{Binding DeletePlayerCommand}" Margin="5" Padding="8" />
         </StackPanel>
     </Grid>
 </Window>

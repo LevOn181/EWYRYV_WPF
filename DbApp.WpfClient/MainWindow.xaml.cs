@@ -34,14 +34,20 @@ namespace DbApp.WpfClient
 
         private void bt_teamWindow_Click(object sender, RoutedEventArgs e)
         {
-            TeamWindowWindow teamWindow = new TeamWindowWindow();
+            TeamWindow teamWindow = new TeamWindow();
             teamWindow.Show();
         }
 
         private void bt_playerWindow_Click(object sender, RoutedEventArgs e)
         {
-            var playerWindow = new PlayerWindow();
+            PlayerWindow playerWindow = new PlayerWindow();
             playerWindow.Show();
+        }
+
+        private void bt_queryWindow_click(object sender, RoutedEventArgs e)
+        {
+            QueryWindow queryWindow = new QueryWindow();
+            queryWindow.Show();
         }
     }
 }

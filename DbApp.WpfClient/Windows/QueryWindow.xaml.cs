@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace DbApp.WpfClient.Windows
 {
     /// <summary>
-    /// Interaction logic for TeamWindowWindow.xaml
+    /// Interaction logic for QueryWindow.xaml
     /// </summary>
-    public partial class TeamWindowWindow : Window
+    public partial class QueryWindow : Window
     {
-        public TeamWindowWindow()
+        public QueryWindow()
         {
             InitializeComponent();
         }

@@ -16,6 +16,7 @@
             <Button x:Name="bt_playerWindow" Content="Player Editor" Margin="10" Padding="10" Click="bt_playerWindow_Click"/>
             <Button x:Name="bt_teamWindow" Content="Team Editor" Margin="10" Padding="10" Click="bt_teamWindow_Click"/>
             <Button x:Name="bt_managerWindow" Content="Manager Editor" Margin="10" Padding="10" Click="bt_managerWindow_Click"/>
+            <Button x:Name="bt_queryWindows" Content="Queries" Margin="10" Padding="10" Click="bt_queryWindow_click"/>
         </StackPanel>
     </Grid>
 </Window>

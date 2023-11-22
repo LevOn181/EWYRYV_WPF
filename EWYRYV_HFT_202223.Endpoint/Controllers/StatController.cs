@@ -1,6 +1,8 @@
-﻿using EWYRYV_HFT_202223.Logic;
+﻿using EWYRYV_HFT_202223.Endpoint.Services;
+using EWYRYV_HFT_202223.Logic;
 using EWYRYV_HFT_202223.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +17,10 @@ namespace EWYRYV_HFT_202223.Endpoint.Controllers
         ITeamLogic teamLogic;
         IManagerLogic managerLogic;
         IPlayerLogic playerLogic;
-        public StatController(ITeamLogic tlogic, IPlayerLogic plogic, IManagerLogic mlogic)
+        IHubContext<SignalRHub> hub;
+        public StatController(ITeamLogic tlogic, IPlayerLogic plogic, IManagerLogic mlogic, IHubContext<SignalRHub> hub)
         {
+            this.hub = hub;
             this.teamLogic = tlogic;
             this.managerLogic = mlogic;
             this.playerLogic = plogic;

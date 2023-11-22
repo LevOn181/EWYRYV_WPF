@@ -17,7 +17,6 @@ namespace DbApp.WpfClient.ViewModels
         public RestCollection<Player> Players { get; set; }
 
         private Player selectedPlayer;
-
         public Player SelectedPlayer
         {
             get { return selectedPlayer; }
@@ -29,6 +28,10 @@ namespace DbApp.WpfClient.ViewModels
                     {
                         Name = value.Name,
                         PlayerId = value.PlayerId,
+                        BirthDate = value.BirthDate,
+                        KitNumber = value.KitNumber,
+                        TeamId = value.TeamId,
+                        Value = value.Value
                     };
                 }
                 OnPropertyChanged();
@@ -59,7 +62,12 @@ namespace DbApp.WpfClient.ViewModels
                 {
                     Players.Add(new Player()
                     {
-                        Name = selectedPlayer.Name
+                        Name = selectedPlayer.Name,
+                        BirthDate = selectedPlayer.BirthDate,
+                        KitNumber = selectedPlayer.KitNumber,
+                        TeamId = selectedPlayer.TeamId,
+                        Value = selectedPlayer.Value
+                        
                     });
                 });
 

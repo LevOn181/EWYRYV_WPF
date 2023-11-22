@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows;
+using Newtonsoft.Json.Linq;
 
 namespace DbApp.WpfClient.ViewModels
 {
@@ -27,6 +28,8 @@ namespace DbApp.WpfClient.ViewModels
                     {
                         Name = value.Name,
                         ManagerId = value.ManagerId,
+                        Nationality = value.Nationality,
+                        TeamId = value.TeamId,
                     };
                 }
                 OnPropertyChanged();
@@ -57,7 +60,10 @@ namespace DbApp.WpfClient.ViewModels
                 {
                     Managers.Add(new Manager()
                     {
-                        Name = selectedManager.Name
+                        Name = selectedManager.Name,
+                        ManagerId = selectedManager.ManagerId,
+                        Nationality = selectedManager.Nationality,
+                        TeamId = selectedManager.TeamId
                     });
                 });
 

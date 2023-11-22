@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DbApp.WpfClient.Windows"
         xmlns:vms="clr-namespace:DbApp.WpfClient.ViewModels"
         mc:Ignorable="d"
-        Title="ManagerWindow" Height="450" Width="800">
+        Title="Manager Editor" Height="450" Width="800">
     <Window.DataContext>
             <vms:ManagerWindowViewModel/>
         </Window.DataContext>
@@ -24,9 +24,13 @@
             </ListBox>
             <StackPanel Grid.Column="1">
                 <Label Content="Name" Background="Lavender" Padding="10" />
-                <TextBox Text="{Binding SelectedManager.Name}" Padding="10" Margin="0,0,0,30"/>
+                <TextBox Text="{Binding SelectedManager.Name}" Padding="10"/>
+                <Label Content="Nationality" Background="Lavender" Padding="10" />
+                <TextBox Text="{Binding SelectedManager.Nationality}" Padding="10"/>
+                <Label Content="Team ID" Background="Lavender" Padding="10" />
+                <TextBox Text="{Binding SelectedManager.TeamId}" Padding="10" Margin="0,0,0,10"/>
 
-                <Button Content="Create Manager" Command="{Binding CreateManagerCommand}" Margin="10" Padding="10" />
+            <Button Content="Create Manager" Command="{Binding CreateManagerCommand}" Margin="10" Padding="10" />
                 <Button Content="Update Manager" Command="{Binding UpdateManagerCommand}" Margin="10" Padding="10" />
                 <Button Content="Delete Manager" Command="{Binding DeleteManagerCommand}" Margin="10" Padding="10" />
             </StackPanel>
