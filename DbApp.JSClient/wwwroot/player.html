@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Players</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <h1>List of players</h1>
@@ -12,35 +12,25 @@
         <a href="../index.html">
             <img id="back" src="Images/back.png" alt="Back" />
         </a>
-        <h1>Games Catalog</h1>
     </div>
 
     <div id="formdiv">
-        <label>Name</label>
         <input type="text" id="playername" />
-        <label>Birth Date</label>
-        <input type="date" id="playerbirthdate" />
-        <label>Kit Number</label>
+        <input type="text" id="playerbirthdate" />
         <input type="number" id="playerkitnumber" />
-        <label>Team ID</label>
         <input type="number" id="playerteamid" />
-        <label>Value</label>
         <input type="number" id="playervalue" />
         <button type="button" onclick="create()">Create</button>
     </div>
 
     <div id="updateformdiv">
-        <label>Name</label>
         <input type="text" id="playernameupdate" />
-        <label>Birth Date</label>
         <input type="text" id="playerbirthdateupdate" />
-        <label>Kit Number</label>
         <input type="number" id="playerkitnumberupdate" />
-        <label>Team ID</label>
         <input type="number" id="playerteamidupdate" />
-        <label>Value</label>
         <input type="number" id="playervalueupdate" />
         <button type="button" onclick="update()">Update</button>
+        <button type="button" onclick="cancel()">Cancel</button>
     </div>
 
     <table>

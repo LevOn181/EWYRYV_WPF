@@ -1,7 +1,9 @@
 ﻿let players = [];
+const teams = [];
 let connection = null;
 getdata();
 setupSignalR();
+defaultValuesToLoad();
 
 let playerIdToUpdate = -1;
 
@@ -121,6 +123,10 @@ function showupdate(id) {
     playerIdToUpdate = id;
 }
 
+function cancel() {
+    document.getElementById('updateformdiv').style.display = 'none';
+    document.getElementById('formdiv').style.display = 'flex';
+}
 
 function create() {
     let name = document.getElementById('playername').value;
@@ -149,4 +155,12 @@ function create() {
         })
         .catch((error) => {console.error('Error:', error);
         })
+}
+
+function defaultValuesToLoad() {
+    document.getElementById('playername').placeholder = "Name";
+    document.getElementById('playerbirthdate').placeholder = "Bith date format: DD/MM/YYYY";
+    document.getElementById('playerkitnumber').placeholder = "Kit Number (1-99)";
+    document.getElementById('playerteamid').placeholder = "Team ID (1-" + teams.length + ")";
+    document.getElementById('playervalue').placeholder = "Value";
 }
