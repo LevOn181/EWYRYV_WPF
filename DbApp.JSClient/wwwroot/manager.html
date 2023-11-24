@@ -2,9 +2,52 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Managers</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/8bit-wonder');
+    </style>
+
 </head>
 <body>
+    <h1>List of managers</h1>
+    <div class="backButton">
+        <a href="../index.html">
+            <img id="back" src="Images/back.png" alt="Back" />
+        </a>
+    </div>
 
+    <div id="formdiv">
+        <input type="text" id="managername" />
+        <input type="text" id="managernationality"/>
+        <input type="number" id="managerteamid" />
+        <button type="button" onclick="create()">Create</button>
+    </div>
+
+    <div id="updateformdiv">
+        <input type="text" id="managernameupdate" />
+        <input type="number" id="managernationalityupdate" />
+        <input type="number" id="managerteamidupdate" min="1" max="20" />
+        <button type="button" onclick="update()">Update</button>
+        <button type="button" onclick="cancel()">Cancel</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Foundation Year</th>
+                <th>ID of Managed Team</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="resultarea">
+        </tbody>
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="manager.js"></script>
 </body>
 </html>

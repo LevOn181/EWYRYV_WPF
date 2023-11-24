@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teams</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/8bit-wonder');
+    </style>
+
 </head>
 <body>
     <h1>List of teams</h1>
@@ -16,7 +20,7 @@
 
     <div id="formdiv">
         <input type="text" id="teamname" />
-        <input type="number" id="teamfoundationyear" />
+        <input type="number" id="teamfoundationyear" min="1800" max="2023"/>
         <button type="button" onclick="create()">Create</button>
     </div>
 
