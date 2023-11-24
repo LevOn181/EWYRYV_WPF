@@ -17,7 +17,7 @@ namespace DbApp.WpfClient
     {
         HttpClient client;
 
-        public RestService(string baseurl, string pingableEndpoint = "swagger")
+        public RestService(string baseurl, string pingableEndpoint)
         {
             bool isOk = false;
             do

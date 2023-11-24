@@ -14,8 +14,7 @@ namespace DbApp.WpfClient.ViewModels
 {
     internal class QueryWindowViewModel : ObservableRecipient
     {
-        public RestCollection<IEnumerable<object>> HungarianManagers { get; set; }
-
+        public RestCollection<Manager> HungarianManagers { get; set; }
 
         public static bool IsInDesingMode
         {
@@ -30,7 +29,7 @@ namespace DbApp.WpfClient.ViewModels
         {
             if (!IsInDesingMode)
             {
-                HungarianManagers = new RestCollection<IEnumerable<object>>("http://localhost:15885/", "Stat", "hub");
+                HungarianManagers = new RestCollection<Manager> ("http://localhost:15885/", "stat/hungarianManagers", "hub");
             }
         }
     }

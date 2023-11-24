@@ -25,8 +25,13 @@
             <ListBox Padding="10"/>
 
             <Label Content="Most valuable player in each team" Background="Lavender" Padding="10"/>
-            <ListBox Padding="10"/>
-
+            <ListBox ItemsSource="{Binding HungarianManagers}" Padding="10">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Name}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
             <Button Content="Start queries" Padding="10" Margin="10" />
         </StackPanel>
     </Grid>
