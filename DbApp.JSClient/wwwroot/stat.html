@@ -16,42 +16,21 @@
         </a>
         <h1>Stats Selection</h1>
     </div>
-
-    <div class="grid">
-        <div class="left">
-            <select id="statSelection">
-                <option value="countPlayers">Count of players</option>
-                <option value="teamValue">Value of each team</option>
-                <option value="mostValuable">Youngest game</option>
-                <option value="hungarianManagers">Hungarian managers</option>
-                <option value="topPlayerData">Data of top players</option>
-            </select>
-
-            <button onclick="contentDecider()" type="button" id="showStat">Show Selected Stat</button>
-
-        </div>
-        <div class="right">
-            <table id="statTable">
-                <thead>
-                    <tr>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tr>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
+    <div class="container">
+        <select id="statSelection">
+            <option value="countPlayers">Count of players</option>
+            <option value="teamValue">Value of each team</option>
+            <option value="mostValuable">Youngest game</option>
+            <option value="hungarianManagers">Hungarian managers</option>
+            <option value="topPlayerData">Data of top players</option>
+        </select>
+        <button onclick="showSelection()" type="button" id="showStat">Show Selected Stat</button>
     </div>
-
-
-
+   <table id="statTable">     
+   </table>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
-    <script src="stats.js"></script>
+    <script src="stat.js"></script>
 </body>
 </html>
