@@ -28,7 +28,7 @@
             <ListBox ItemsSource="{Binding HungarianManagers}" Padding="10">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Label Content="{Binding Name}"/>
+                        <Label Content="{Binding ManagerName}"/>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>

@@ -284,12 +284,14 @@ namespace DbApp.WpfClient
         RestService rest;
         List<T> items;
         bool hasSignalR;
+        string endpoint;
         Type type = typeof(T);
 
         public RestCollection(string baseurl, string endpoint, string hub = null)
         {
             hasSignalR = hub != null;
             this.rest = new RestService(baseurl, endpoint);
+            this.endpoint = endpoint;
             if (hub != null)
             {
                 this.notify = new NotifyService(baseurl + hub);
@@ -324,7 +326,7 @@ namespace DbApp.WpfClient
 
         private async Task Init()
         {
-            items = await rest.GetAsync<T>(typeof(T).Name);
+            items = await rest.GetAsync<T>(endpoint);
             CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
         }
 
