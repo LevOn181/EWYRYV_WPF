@@ -14,7 +14,12 @@ namespace DbApp.WpfClient.ViewModels
 {
     internal class QueryWindowViewModel : ObservableRecipient
     {
-        public RestCollection<Manager> HungarianManagers { get; set; }
+        public RestCollection<object> CountPlayers { get; set; }
+        public RestCollection<object> TeamValue { get; set; }
+        public RestCollection<object> MostValuable { get; set; }
+        public RestCollection<object> HungarianManagers { get; set; }
+        public RestCollection<object> TopPlayerData { get; set; }
+
 
         public static bool IsInDesingMode
         {
@@ -29,7 +34,11 @@ namespace DbApp.WpfClient.ViewModels
         {
             if (!IsInDesingMode)
             {
-                HungarianManagers = new RestCollection<Manager> ("http://localhost:15885/", "stat/hungarianManagers", "hub");
+                CountPlayers = new RestCollection<object>("http://localhost:15885/", "stat/countPlayers", "hub");
+                TeamValue = new RestCollection<object>("http://localhost:15885/", "stat/teamValue", "hub");
+                MostValuable = new RestCollection<object>("http://localhost:15885/", "stat/mostValuable", "hub");
+                HungarianManagers = new RestCollection<object>("http://localhost:15885/", "stat/hungarianManagers", "hub");
+                TopPlayerData = new RestCollection<object>("http://localhost:15885/", "stat/topPlayerData", "hub");   
             }
         }
     }

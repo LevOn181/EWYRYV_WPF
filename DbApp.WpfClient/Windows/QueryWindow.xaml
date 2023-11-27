@@ -6,33 +6,98 @@
         xmlns:local="clr-namespace:DbApp.WpfClient.Windows"
         xmlns:vms="clr-namespace:DbApp.WpfClient.ViewModels"
         mc:Ignorable="d"
-        Title="QueryWindow" Height="450" Width="800">
+        Title="QueryWindow" Height="650" Width="800">
     <Window.DataContext>
         <vms:QueryWindowViewModel/>
     </Window.DataContext>
     <Grid>
-        <StackPanel>
-            <Label Content="Total number of players" Background="Lavender" Padding="10"/>
-            <TextBox Padding="10"/>
+        <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Grid.RowSpan="2" Grid.Row="0">
+                <Label Content="Total number of players in each team" Background="Lavender" Padding="10"/>
+                <ListBox ItemsSource="{Binding CountPlayers}" ScrollViewer.CanContentScroll="True" Height="270px" Padding="10" HorizontalContentAlignment="Stretch">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="Lavender" BorderThickness="1">
+                                <Grid>
+                                    <StackPanel>
+                                        <Label Content="{Binding teamName}" ContentStringFormat="Team name: {0}"/>
+                                        <Label Content="{Binding playerCount}" ContentStringFormat="Total number of players: {0}"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
 
-            <Label Content="Total value of each team" Background="Lavender" Padding="10"/>
-            <ListBox Padding="10"/>
+                <Label Content="Total value of players in each team" Background="Lavender" Padding="10"/>
+                <ListBox ItemsSource="{Binding TeamValue}" ScrollViewer.CanContentScroll="True" Height="265px" Padding="10" HorizontalContentAlignment="Stretch">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="Lavender" BorderThickness="1">
+                                <Grid>
+                                    <StackPanel>
+                                        <Label Content="{Binding teamName}" ContentStringFormat="Team name: {0}"/>
+                                        <Label Content="{Binding teamValue}" ContentStringFormat="Team value: {0}"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
 
-            <Label Content="Most valuable player" Background="Lavender" Padding="10"/>
-            <TextBox Padding="10"/>
+            <StackPanel Grid.Column="1" Grid.RowSpan="2" Grid.Row="0">
+                <Label Content="Most valuable player in database" Background="Lavender" Padding="10"/>
+                <ListBox ItemsSource="{Binding MostValuable}" ScrollViewer.CanContentScroll="True" Height="100px" Padding="10" HorizontalContentAlignment="Stretch">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="Lavender" BorderThickness="1">
+                                <Grid>
+                                    <StackPanel>
+                                        <Label Content="{Binding playerName}" ContentStringFormat="Player name: {0}"/>
+                                        <Label Content="{Binding managerName}" ContentStringFormat="Manager name: {0}"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
 
-            <Label Content="List of Hungarian managers" Background="Lavender" Padding="10"/>
-            <ListBox Padding="10"/>
+                <Label Content="Data of most valuable player in each team" Background="Lavender" Padding="10"/>
+                <ListBox ItemsSource="{Binding TopPlayerData}" ScrollViewer.CanContentScroll="True" Height="200px" Padding="10" HorizontalContentAlignment="Stretch">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="Lavender" BorderThickness="1">
+                                <Grid>
+                                    <StackPanel>
+                                        <Label Content="{Binding teamName}" ContentStringFormat="Team name: {0}"/>
+                                        <Label Content="{Binding managerName}" ContentStringFormat="Manager name: {0}"/>
+                                        <Label Content="{Binding playerName}" ContentStringFormat="Name of most valuable player: {0}"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
 
-            <Label Content="Most valuable player in each team" Background="Lavender" Padding="10"/>
-            <ListBox ItemsSource="{Binding HungarianManagers}" Padding="10">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Label Content="{Binding ManagerName}"/>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-            <Button Content="Start queries" Padding="10" Margin="10" />
-        </StackPanel>
-    </Grid>
+                <Label Content="List of Hungarian managers" Background="Lavender" Padding="10"/>
+                <ListBox ItemsSource="{Binding HungarianManagers}" ScrollViewer.CanContentScroll="True" Height="200px" Padding="10" HorizontalContentAlignment="Stretch">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="Lavender" BorderThickness="1">
+                                <Grid>
+                                    <StackPanel>
+                                        <Label Content="{Binding managerName}" ContentStringFormat="Manager name: {0}"/>
+                                        <Label Content="{Binding teamName}" ContentStringFormat="Team name: {0}"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </Grid>
 </Window>
